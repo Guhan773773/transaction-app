@@ -1,0 +1,24 @@
+//navbar
+
+import react useate....
+himenu for that thrible line ehile using mobile
+aioutlineclose after opened himenu that close icon
+put everything in the <nav/>
+
+ <ul className='css'>
+{["Market","Tutorial","Wallet","Exchage"].map((item,index)=>
+(<Navitems key={item+index} title={item}/>))}
+
+const Navitems = ({title,classprops})=>{
+  return(
+    <li className={'mx-4 cursor-pointer ${classprops}'}>
+      {title}
+    </li>
+  )}
+
+everyitem is mapped with index, title is item
+then navitems gets title and classprops from the ul, for evry elemt in the array
+navitem will loops 
+<li className={'mx-4 cursor-pointer ${classprops}'}>{Market}</li>
+<li className={'mx-4 cursor-pointer ${classprops}'}>{Tutorila}</li>...
+<Navitems key={Market+0} title={Market}/>...

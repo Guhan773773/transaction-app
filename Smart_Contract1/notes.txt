@@ -1,0 +1,42 @@
+to deploy and compile
+1-____________________________
+    go to node providers and create an api and http 
+
+2___________
+  paste the in hardhat.config.js
+  setup the example like here
+
+3______________
+      go to ignition and modules 
+      create .js file as the contract name :
+      const { buildModule } = require("@nomicfoundation/hardhat-ignition/modules");
+
+module.exports = buildModule("Solidityfile + Module", (m) => {
+
+  const transaction = m.contract("Contactname");
+
+  return { transaction };
+});
+4________________________
+in therminal 
+           npx hardhat ignition deploy ignition/modules/Transaction.js --network sepolia
+
+           run thme in the therminal 
+5_________________
+
+in frontend create utils insise it create constants.js and transaction.json furthur 
+
+transactions.json in web3app <=== transatcion.json in contracts
+consatnts.js ===> import the abi ===> export contractadderess and ContractABI
+
+
+6____________ 
+create a file context 
+this contextapi around the entire application which only serve the app to connect with the blockchain
+here create TranscationContext.js
+      *centralized palce where contract can be hadled here common for everyother components 
+      *since we are using metamask have to access the ethereum = window 
+      *bascially structing ethereum object from window.ethereum 
+
+7_______________
+create a function for feetching the etherem function  "getEthereumContract" ==> provider, signer, contractaddress and contractabi
